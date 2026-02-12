@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --background: #050510;
-  --foreground: #e4e4e7;
-  --accent: #6366f1;
-  --accent-glow: #818cf8;
-  --accent-secondary: #a855f7;
-  --card-bg: #0f0f23;
-  --card-border: #1e1e3a;
-  --muted: #71717a;
+  --background: #FAF9F0;
+  --foreground: #131314;
+  --accent: #d97757;
+  --accent-glow: #C46849;
+  --accent-secondary: #d97757;
+  --card-bg: #F2F0E4;
+  --card-border: #E0DDD0;
+  --muted: #5E5D59;
 }
 
 @theme inline {
@@ -20,7 +20,8 @@
   --color-card-bg: var(--card-bg);
   --color-card-border: var(--card-border);
   --color-muted: var(--muted);
-  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-serif: "Source Serif 4", "Georgia", serif;
+  --font-sans: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 }
 
@@ -30,29 +31,38 @@ body {
   font-family: var(--font-sans);
 }
 
-/* Glow effect for inputs */
-.glow-input {
-  box-shadow: 0 0 20px rgba(99, 102, 241, 0.15), 0 0 60px rgba(99, 102, 241, 0.05);
-  transition: box-shadow 0.3s ease;
-}
-.glow-input:focus {
-  box-shadow: 0 0 30px rgba(99, 102, 241, 0.3), 0 0 80px rgba(99, 102, 241, 0.1);
+h1, h2, h3 {
+  font-family: var(--font-serif);
 }
 
-/* Card glow on hover */
+::selection {
+  background: rgba(217, 119, 87, 0.3);
+  color: var(--foreground);
+}
+
+/* Glow effect for inputs */
+.glow-input {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.glow-input:focus {
+  box-shadow: 0 0 0 3px rgba(217, 119, 87, 0.15), 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+/* Card hover */
 .card-glow {
   transition: all 0.3s ease;
 }
 .card-glow:hover {
-  box-shadow: 0 0 30px rgba(99, 102, 241, 0.15);
-  border-color: rgba(99, 102, 241, 0.4);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  border-color: rgba(217, 119, 87, 0.4);
 }
 
 /* Selected card state */
 .card-selected {
-  box-shadow: 0 0 30px rgba(99, 102, 241, 0.25);
-  border-color: rgba(99, 102, 241, 0.6) !important;
-  background: rgba(99, 102, 241, 0.05) !important;
+  box-shadow: 0 4px 20px rgba(217, 119, 87, 0.1);
+  border-color: rgba(217, 119, 87, 0.6) !important;
+  background: rgba(217, 119, 87, 0.04) !important;
 }
 
 /* Typewriter cursor */
@@ -81,21 +91,21 @@ body {
   animation: fadeInUp 0.6s ease forwards;
 }
 
-/* Gradient text */
+/* Gradient text — warm terracotta gradient */
 .gradient-text {
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-secondary) 100%);
+  background: linear-gradient(135deg, var(--accent) 0%, #C46849 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* Pulse glow for CTA */
+/* Subtle CTA pulse */
 @keyframes pulseGlow {
-  0%, 100% { box-shadow: 0 0 20px rgba(99, 102, 241, 0.3); }
-  50% { box-shadow: 0 0 40px rgba(99, 102, 241, 0.5); }
+  0%, 100% { box-shadow: 0 2px 8px rgba(217, 119, 87, 0.2); }
+  50% { box-shadow: 0 4px 16px rgba(217, 119, 87, 0.35); }
 }
 .pulse-glow {
-  animation: pulseGlow 2s ease infinite;
+  animation: pulseGlow 2.5s ease infinite;
 }
 
 /* Smooth scrollbar */

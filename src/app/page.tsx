@@ -113,7 +113,7 @@ function LandingPage() {
 
         <div className="relative z-10 text-center max-w-3xl mx-auto">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-card-border bg-card-bg/50 text-sm text-muted mb-8">
-            <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
             {waitlistCount}+ store owners on the waitlist
           </div>
 
@@ -144,7 +144,7 @@ function LandingPage() {
                 {loading ? 'Joining...' : 'Join the Waitlist'}
               </button>
             </div>
-            {error && <p className="mt-3 text-red-400 text-sm">{error}</p>}
+            {error && <p className="mt-3 text-red-600 text-sm">{error}</p>}
           </form>
 
           <p className="text-sm text-muted">
@@ -268,7 +268,7 @@ function LandingPage() {
                     {loading ? 'Joining...' : 'Join Now'}
                   </button>
                 </div>
-                {error && <p className="mt-3 text-red-400 text-sm">{error}</p>}
+                {error && <p className="mt-3 text-red-600 text-sm">{error}</p>}
               </form>
 
               <p className="text-xs text-muted">No spam. Unsubscribe anytime.</p>

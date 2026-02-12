@@ -74,7 +74,7 @@ export default function WaitlistForm({
           {loading ? 'Joining...' : 'Join the Waitlist'}
         </button>
       </div>
-      {error && <p className="mt-3 text-red-400 text-sm">{error}</p>}
+      {error && <p className="mt-3 text-red-600 text-sm">{error}</p>}
     </form>
   )
 }
